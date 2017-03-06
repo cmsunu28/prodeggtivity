@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+
+  "name": "prodEggtivity",
+  "description": "a chrome extension to set off a clicker on the game Egg, Inc when you are browsing work-related tabs",
+  "version": "0.0.1",
+  "icons":{"128":"icon.png"},
+  "options_page": "options.html",
+  "browser_action":{
+    "default_icon": "icon.png"
+    },
+  "background": {
+    "scripts" : ["background.js"],
+    "persistent": false
+    },
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "storage",
+    "webNavigation",
+    "https://api.particle.io/v1/devices/*"
+  ],
+  "web_accessible_resources": [
+    "style.css"
+  ]
+}

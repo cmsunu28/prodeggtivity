@@ -1,0 +1,39 @@
+body {
+  font-family: 'Noto Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
+}
+p {
+  font-size: 20px;
+}
+p.small {
+  font-size: 16px;
+}
+a,
+a:hover,
+a:focus,
+a:active,
+a.active {
+  color: #2c3e50;
+  outline: none;
+}
+h2,
+h3,
+h5,
+h6 {
+  font-family: "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+h1 {
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 48px;
+  color: white;
+  -webkit-text-stroke: 2px #2c3e50;
+}
+h4 {
+  font-family: "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: none;
+  font-size: 24px;
+}
