@@ -79,15 +79,13 @@ var lastEvent;
 
 function sendEvent(eventVal) {
     var xhttp = new XMLHttpRequest();
-    xhttp.open('POST', 'https://api.particle.io/v1/devices/'+device+'/tap?access_token='+token, true);
-    xhttp.send('arg='+eventVal);
-    //actually send stuff here...
+    var params = "arg="+eventVal+"&access_token="+token;
+    xhttp.open('POST', 'https://api.particle.io/v1/devices/'+device+'/tap', true);
+    xhttp.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+    xhttp.send(params);
 }
 
 function newNavigation() {
-	// getWorkPlayTabs();
-	// sourceUrl=getAciveTabSource();
-	 
 	var url;
 	var sourceUrl;
 	chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
@@ -104,20 +102,20 @@ function newNavigation() {
 			if (checkTabs(sourceUrl, worktabs)) {
 				// if it is in worktabs, then start productivity
 				console.log("send event for production!");
-				sendEvent("1");
-				lastEvent=1;
+				sendEvent("2");
+				lastEvent=2;
 			}
 			else if (checkTabs(sourceUrl,playtabs)) {
 				// if it is in playtabs, then stop productivity
 				console.log("send event to stop production!");
-				sendEvent("-1");
-				lastEvent=-1;
+				sendEvent("0");
+				lastEvent=0;
 			}
 			else {
 				// otherwise, run at a regular rate without doing anything crazy
 				console.log("send event to keep doing whatever you were doing...");
-				sendEvent("0");
-				lastEvent=0;
+				sendEvent("1");
+				lastEvent=1;
 			}
     	}
 
