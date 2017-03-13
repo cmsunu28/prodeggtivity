@@ -25,8 +25,8 @@ int lastState=0;
 int tapOnTime=500;
 int tapOffTime=2000;
 
-int servoUp=30;
-int servoDown=10;
+int servoUp=10;
+int servoDown=30;
 
 void setup() {
 // Set up the functions
